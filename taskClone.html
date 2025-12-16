@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Amazon-style Nav</title>
+  <link rel="stylesheet" href="Clone.css" />
+</head>
+<body>
+  <!-- Top strip (optional) -->
+  <div class="top-strip">Deliver to <strong>Your City</strong></div>
+
+  <header class="site-header" role="banner">
+    <nav class="nav" role="navigation" aria-label="Primary">
+      <!-- Logo -->
+      <a href="#" class="logo" aria-label="Homepage">
+        <span class="logo-am">amozan</span>
+      </a>
+
+      <!-- Location / delivery -->
+      <div class="nav-location" aria-hidden="false">
+        <span class="small">Hello</span>
+        <strong class="location-line">Select your address</strong>
+      </div>
+
+      <!-- Categories / All -->
+      <div class="categories">
+        <button class="cat-btn" aria-haspopup="true" aria-expanded="false">
+          ☰ All
+        </button>
+        <ul class="cat-dropdown" role="menu" aria-label="Categories">
+          <li role="none"><a role="menuitem" href="#">All Departments</a></li>
+          <li role="none"><a role="menuitem" href="#">Books</a></li>
+          <li role="none"><a role="menuitem" href="#">Electronics</a></li>
+          <li role="none"><a role="menuitem" href="#">Clothing</a></li>
+          <li role="none"><a role="menuitem" href="#">Home</a></li>
+        </ul>
+      </div>
+
+      <!-- Search bar -->
+      <form class="search" role="search" action="#" method="get" aria-label="Site search">
+        <label class="visually-hidden" for="search-input">Search</label>
+        <input id="search-input" name="q" type="search" placeholder="Search products, brands and more" />
+        <button type="submit" class="search-btn" aria-label="Search">Search</button>
+      </form>
+
+      <!-- Account / Orders / Cart -->
+      <div class="nav-actions">
+        <div class="account" tabindex="0">
+          <span class="small">Hello, Sign in</span>
+          <strong>Account & Lists ▾</strong>
+          <ul class="account-dropdown" role="menu" aria-label="Account menu">
+            <li role="none"><a role="menuitem" href="#">Sign in</a></li>
+            <li role="none"><a role="menuitem" href="#">Orders</a></li>
+            <li role="none"><a role="menuitem" href="#">Your Account</a></li>
+          </ul>
+        </div>
+
+        <a href="#" class="orders">
+          <span class="small">Returns</span>
+          <strong>& Orders</strong>
+        </a>
+
+        <a href="#" class="cart" aria-label="Cart">
+          <svg class="cart-icon" viewBox="0 0 24 24" focusable="false" aria-hidden="true">
+            <path d="M7 4h-2l-1 2v2h2l3.6 7.6c.2.4.6.7 1 .7h6v-2h-5.2l-.6-1h3.8c.5 0 .9-.3 1.1-.7L21 6H6.2"></path>
+          </svg>
+          <span class="cart-count" aria-hidden="true">0</span>
+          <strong class="cart-text">Cart</strong>
+        </a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Example page content -->
+  <main style="padding:2rem;">
+    <h1>Demo page</h1>
+    <p>This demonstrates an Amazon-like navigation created with only HTML & CSS.</p>
+  </main>
+</body>
+</html>

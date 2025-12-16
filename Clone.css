@@ -1,0 +1,172 @@
+/* Reset-ish */
+* { box-sizing: border-box; }
+html,body { margin: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial; color: #111; }
+a { color: inherit; text-decoration: none; }
+
+/* Visually-hidden helper for accessibility */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden; clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; border: 0; padding: 0; margin: -1px;
+}
+
+/* Top strip */
+.top-strip {
+  background: #131921;
+  color: #fff;
+  text-align: center;
+  padding: 6px 8px;
+  font-size: 13px;
+}
+
+/* Header / nav */
+.site-header { background: linear-gradient(#232f3e, #232f3e); box-shadow: 0 1px 0 rgba(0,0,0,.3); }
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  color: white;
+}
+
+/* Logo */
+.logo { display: inline-flex; align-items: center; padding: 6px 8px; }
+.logo-am {
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.8px;
+  color: #ffd700; /* golden like Amazon */
+  text-transform: lowercase;
+}
+
+/* Location */
+.nav-location { display: flex; flex-direction: column; font-size: 12px; line-height: 1; padding-left: 6px; }
+.nav-location .small { opacity: .9; font-size: 12px; }
+.location-line { font-size: 13px; }
+
+/* Categories */
+.categories { position: relative; }
+.cat-btn {
+  background: rgba(255,255,255,0.08);
+  border: none;
+  color: white;
+  padding: 8px 10px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: 600;
+}
+.cat-btn:focus { outline: 3px solid rgba(255,255,255,0.15); }
+.cat-dropdown {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  background: white;
+  color: #111;
+  min-width: 180px;
+  border-radius: 6px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  padding: 8px 0;
+  display: none;
+  z-index: 30;
+}
+.cat-dropdown a { display: block; padding: 8px 14px; font-size: 14px; }
+.cat-dropdown a:hover, .cat-dropdown a:focus { background: #f0f0f0; }
+
+/* Show category dropdown on hover/focus of container (CSS-only) */
+.categories:hover .cat-dropdown,
+.categories:focus-within .cat-dropdown { display: block; }
+
+/* Search */
+.search {
+  display: flex;
+  flex: 1 1 auto;
+  align-items: center;
+  gap: 6px;
+  margin: 0 8px;
+}
+.search input[type="search"] {
+  flex: 1;
+  padding: 10px 12px;
+  border-radius: 4px 0 0 4px;
+  border: none;
+  min-width: 120px;
+  font-size: 15px;
+}
+.search input[type="search"]:focus { outline: 3px solid rgba(255,255,255,0.12); }
+.search-btn {
+  padding: 10px 14px;
+  border: none;
+  border-radius: 0 4px 4px 0;
+  background: #febd69;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+/* Nav actions */
+.nav-actions { display: flex; gap: 12px; align-items: center; }
+.account, .orders, .cart {
+  color: white;
+  text-align: left;
+  padding: 6px 8px;
+  border-radius: 4px;
+  position: relative;
+  min-width: 90px;
+}
+.account { cursor: pointer; }
+.account .small { display: block; font-size: 12px; opacity: .9; }
+.account strong { font-size: 13px; display: block; }
+
+.orders .small { display: block; font-size: 12px; opacity: .9; }
+.orders strong { font-size: 13px; display: block; }
+
+/* Account dropdown (CSS-only) */
+.account-dropdown {
+  display: none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 6px);
+  background: white;
+  color: #111;
+  min-width: 180px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.2);
+  border-radius: 6px;
+  padding: 8px 0;
+  z-index: 30;
+}
+.account-dropdown a { display: block; padding: 8px 14px; }
+.account-dropdown a:hover, .account-dropdown a:focus { background: #f6f6f6; }
+
+/* Show account dropdown on hover or keyboard focus */
+.account:hover .account-dropdown,
+.account:focus-within .account-dropdown { display: block; }
+
+/* Cart */
+.cart { display: flex; align-items: center; gap: 6px; padding-right: 10px; }
+.cart-icon { width: 20px; height: 20px; fill: none; stroke: white; stroke-width: 1.2; }
+.cart-count {
+  background: #f08804;
+  color: #111;
+  padding: 2px 6px;
+  border-radius: 12px;
+  font-weight: 700;
+  font-size: 12px;
+}
+
+/* Responsive tweaks */
+@media (max-width: 900px) {
+  .nav { gap: 8px; padding: 8px; }
+  .nav-location { display: none; }
+  .categories { display: none; }
+  .search input[type="search"] { min-width: 60px; }
+  .search-btn { padding: 9px 10px; }
+  .logo-am { font-size: 22px; }
+}
+
+@media (max-width: 560px) {
+  .search { display: none; } /* hide big search on small screens */
+  .nav-actions .orders { display: none; }
+  .logo-am { font-size: 20px; }
+}
